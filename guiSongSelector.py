@@ -90,20 +90,22 @@ def genOSTSongs():
 root = Tk()
 root.geometry("600x450")
 
-leftside = Frame(root)                      #creates frame for the leftside, to hold buttons on the left
-leftside.pack(side=LEFT, padx= 20)          #initiates the left frame, pads on the x axis by 80 pixels
-rightside = Frame(root)                     #creates frame for the rightside, to hold buttons on the right
-rightside.pack(side=RIGHT, padx = 20)       #initiates the right frame, pads on the x axis by 80 pixels
-songDisplaySide = Frame(root)
-songDisplaySide.pack(side=BOTTOM, padx = 20)
-
 mainWindow = Frame(root)
 mainWindow.pack() 
+
+leftside = Frame(root)                      #creates frame for the leftside, to hold buttons on the left
+leftside.pack(side=LEFT, padx= 20)          #initiates the left frame, pads on the x axis by 80 pixels
+
+rightside = Frame(root)                     #creates frame for the rightside, to hold buttons on the right
+rightside.pack(side=RIGHT, padx = 20)       #initiates the right frame, pads on the x axis by 80 pixels
+
+songDisplaySide = Frame(root)
+songDisplaySide.pack(side=TOP, padx = 20)
 
 #%% text labels and entry
 
 #creates label to display the program instructions 
-instruText = Label(mainWindow,font = "Congenial 12", text = "Welcome to the random song selector! \nPlease use the buttons below to select the genre of music you want to listen to.")
+instruText = Label(mainWindow, font = "Congenial 12", text = "Welcome to the random song selector! \nPlease use the buttons below to select the genre of music you want to listen to.")
 instruText.pack()
 
 #creates label to display the program instructions 
@@ -129,8 +131,8 @@ ostGenButton.pack(padx = 10, pady = 5)
 #creates the string variable to display the chosen song, sets variable to empty so that nothing displays until a button is pressed 
 song = StringVar()
 song.set("")
-songsDisplay = Label(mainWindow, textvariable = song)
-songsDisplay.pack(side = TOP, pady = 5)
+songsDisplay = Label(songDisplaySide, textvariable = song)
+songsDisplay.pack(pady = 10)
 
 #%% title and run 
 #creates title for the window and calls the gui function to run 
