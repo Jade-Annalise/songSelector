@@ -46,7 +46,6 @@ def addToList(y):
      global i
      i = 0
      global songNumber
-     
      songNumber = numberEntry.get() 
      while i < int(songNumber):
              songChoices = random.choice(y)                 #makes random choice of songs in the genre list, saves to variable 
